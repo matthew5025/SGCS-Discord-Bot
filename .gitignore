@@ -3,6 +3,7 @@ node_modules/
 
 # ENV Files
 .env
+config.json
 
 # Yarn / NPM package.lock(s)
 yarn.lock
