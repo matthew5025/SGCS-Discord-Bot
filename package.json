@@ -1,0 +1,23 @@
+{
+    "name": "sgcs-discord-bot",
+    "version": "1.0.0",
+    "description": "A discord bot for SGCS server",
+    "main": "index.js",
+    "repository": "https://github.com/Dallas-Ng/SGCS-Discord-Bot.git",
+    "author": "dallas-ng <ngdallas1@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "lint": "prettier --write"
+    },
+    "dependencies": {
+        "discord.js": "^12.2.0",
+        "dotenv": "^8.2.0"
+    },
+    "devDependencies": {
+        "eslint": "^7.6.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-prettier": "^3.1.4",
+        "nodemon": "^2.0.4",
+        "prettier": "^2.0.5"
+    }
+}
