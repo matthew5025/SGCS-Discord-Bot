@@ -10,9 +10,12 @@ const client = new CommandoClient({
 
 client.registry
     .registerDefaultTypes()
-    .registerGroups([])
+    .registerGroups([
+        ['connect', 'Commands to connect you with others'],
+        ['other', 'Other types of commands'],
+    ])
     .registerDefaultGroups()
-    .registerDefaultCommands()
+    .registerDefaultCommands({ eval: false, prefix: false })
     .registerCommandsIn(path.join(__dirname, 'commands'))
 
 client.on('ready', () => {
@@ -22,12 +25,6 @@ client.on('ready', () => {
         type: 'LISTENING',
         url: 'https://github.com/dallas-ng',
     })
-})
-
-client.on('message', (msg) => {
-    if (msg.content === 'ping') {
-        msg.reply('Pong!')
-    }
 })
 
 client.login(token)
