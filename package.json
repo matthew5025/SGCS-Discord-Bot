@@ -7,8 +7,8 @@
     "author": "dallas-ng <ngdallas1@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "start": "NODE_ENV=production node . ",
-        "dev": "NODE_ENV=development nodemon .",
+        "start": "cross-env NODE_ENV=production node . ",
+        "dev": "cross-env NODE_ENV=development nodemon .",
         "lint": "yarn prettier --write ."
     },
     "dependencies": {
@@ -17,6 +17,7 @@
         "node-fetch": "^2.6.0"
     },
     "devDependencies": {
+        "cross-env": "^7.0.2",
         "eslint": "^7.6.0",
         "eslint-config-prettier": "^6.11.0",
         "eslint-plugin-prettier": "^3.1.4",
