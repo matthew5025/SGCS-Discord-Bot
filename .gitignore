@@ -7,4 +7,4 @@ config.json
 
 # Yarn / NPM package.lock(s)
 yarn.lock
-package-lock.lock
+package-lock.json
