@@ -1,7 +1,7 @@
 const { Command } = require('discord.js-commando');
 const fetch = require('node-fetch');
-const { contributors } = require('../../data.json');
-const { githubToken } = require('../../config.json');
+const { contributors } = require('../../settings/data.json');
+const { githubToken } = require('../../settings/config.json');
 const { MessageSay } = require('../../utils');
 
 module.exports = class WhoMadeMeCommand extends Command {

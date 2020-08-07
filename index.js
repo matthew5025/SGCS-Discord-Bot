@@ -1,17 +1,11 @@
 const { CommandoClient } = require('discord.js-commando');
 const path = require('path');
-const {
-    token,
-    prefix,
-    discord_owner_id,
-    serverID,
-    inviteLink,
-} = require('./config.json');
+const { Config } = require('./utils');
 
 const client = new CommandoClient({
-    commandPrefix: prefix,
-    owner: discord_owner_id,
-    invite: inviteLink,
+    commandPrefix: Config.prefix,
+    owner: Config.discord_owner_id,
+    invite: Config.inviteLink,
     partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
 });
 
@@ -28,7 +22,7 @@ client.registry
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 
-    client.user.setActivity(`${prefix}help`, {
+    client.user.setActivity(`${Config.prefix}help`, {
         type: 'LISTENING',
         url: 'https://github.com/dallas-ng',
     });
@@ -80,7 +74,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
     if (reaction.message.partial) await reaction.message.fetch();
     if (user.bot) return;
 
-    const guild = client.guilds.cache.get(serverID);
+    const guild = client.guilds.cache.get(Config.serverID);
     const member = guild.members.cache.get(user.id);
 
     const userReactions = reaction.message.reactions.cache.filter((reaction) =>
@@ -106,4 +100,4 @@ client.on('messageReactionAdd', async (reaction, user) => {
     }
 });
 
-client.login(token);
+client.login(Config.token);
