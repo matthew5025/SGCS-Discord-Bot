@@ -5,6 +5,7 @@ module.exports = class UptimeCommand extends Command {
     constructor(client) {
         super(client, {
             name: 'opensource',
+            aliases: ['license', 'repo'],
             memberName: 'opensource',
             group: 'other',
             description:
