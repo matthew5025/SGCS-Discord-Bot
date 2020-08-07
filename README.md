@@ -9,6 +9,12 @@
 
 ## Installation
 **Node.js 12.0.0 or newer is required.**
+```sh
+>>> node -v
+>>> v12.16.3
+```
+
+<br/>
 
 This project is configured to allow both yarn and npm.
 
@@ -39,7 +45,7 @@ This project is configured to allow both yarn and npm.
 
 **To run the bot**
 
-The difference between ```yarn start``` and ```yarn dev``` is that ```start``` uses node and ```dev``` uses nodemon (Nodemon allows for reloading).
+The difference between ```yarn start``` and ```yarn dev``` is that ```start``` uses node and ```dev``` uses nodemon.
 
 ```sh
 yarn
@@ -69,8 +75,12 @@ repo/
     ├── .prettierignore
     ├── .prettierrc.json
     ├── index.js
-    └── package-lock.json       # Packaged dependencies managed by NPM
+    └── package.json       # Packaged dependencies managed by NPM
 ```
+
+**yarn.lock and package-lock.json**
+
+For the package-lock files, they should not be commited/pushed into any branches. This is to allow both yarn and npm to be used on this project.
 
 **Linting**
 
