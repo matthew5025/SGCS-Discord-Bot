@@ -12,10 +12,9 @@ module.exports = class UptimeCommand extends Command {
         });
     }
     run(message) {
-        // Minus 2 because server and bot takes a space each.
-        const amountOfUsers = this.client.users.cache.size - 2;
+        // Minus 3 because server and bot takes a space each.
+        const amountOfUsers = this.client.users.cache.size - 3;
         const amountOfUsersOnline = this.client.guilds.cache.size;
-
         return MessageSay(
             message,
             this.name,
