@@ -20,24 +20,34 @@ This project is configured to allow both yarn and npm.
 
 **Create a config.json file under /settings/**
 ```js
-// Both production and development settings can be the exact same
+// You need both production and development objects.
+// They can be the exact same variables
 {
     "production": {
         "prefix": "!",
-        "token": "YOUR_TOKEN",
-        "discord_owner_id": "YOUR OWNER ID",
-        "serverID": "YOUR SERVER ID",
-        "inviteLink": "https://discord.gg/eXqcbDp",
-        "githubToken": "YOUR GITHUB TOKEN" // Not neccessary
+        "token": "",
+        "discord_owner_id": "",
+        "serverID": "",
+        "inviteLink": "",
+        "githubToken": "",
+        // https://firebase.google.com/docs/admin/setup#initialize-sdk
+        "firebaseAdmin": {
+	        "type": "",
+	        "project_id": "",
+	        "private_key_id": "",
+	        "private_key": "",
+	        "client_email": "",
+	        "client_id": "",
+	        "auth_uri": "",
+	        "token_uri": "",
+	        "auth_provider_x509_cert_url": "",
+	        "client_x509_cert_url": ""
+		},
+		"firebaseDBUrl": ""
     },
-
     "development": {
-       "prefix": "!",
-        "token": "YOUR_TOKEN",
-        "discord_owner_id": "YOUR OWNER ID",
-        "serverID": "YOUR SERVER ID",
-        "inviteLink": "https://discord.gg/eXqcbDp",
-        "githubToken": "YOUR GITHUB TOKEN" // Not neccessary
+        "prefix" : "$"
+        "..." : "the production keys"
     }
 }
 
