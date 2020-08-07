@@ -7,7 +7,7 @@ module.exports = class UptimeCommand extends Command {
             name: 'opensource',
             aliases: ['license', 'repo'],
             memberName: 'opensource',
-            group: 'other',
+            group: 'bot',
             description:
                 "More information about this bot's license and open source status.",
         });

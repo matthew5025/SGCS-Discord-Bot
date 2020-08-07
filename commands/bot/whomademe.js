@@ -10,7 +10,7 @@ module.exports = class WhoMadeMeCommand extends Command {
             name: 'whomademe',
             aliases: ['bot-maker', 'bot-creator'],
             memberName: 'whomademe',
-            group: 'other',
+            group: 'bot',
             description: "Replies with the bot creator's name.",
         });
     }
