@@ -9,7 +9,7 @@ module.exports = class UptimeCommand extends Command {
 			memberName: 'opensource',
 			group: 'bot',
 			description:
-				'More information about this bot\'s license and open source status.',
+				'More information about this bot\'s license and open source status.'
 		});
 	}
 	run(message) {

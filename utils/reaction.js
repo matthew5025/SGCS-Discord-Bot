@@ -8,22 +8,22 @@ module.exports = {
 					{
 						name: '🟣 University',
 						value: '\u200b',
-						inline: true,
+						inline: true
 					},
 					{
 						name: '🟠 Polytechnic',
 						value: '\u200b',
-						inline: true,
+						inline: true
 					},
 					{
 						name: '🟡 Working',
 						value: '\u200b',
-						inline: true,
-					},
+						inline: true
+					}
 				],
 				footer: {
-					text: '❌Clear Roles',
-				},
+					text: '❌Clear Roles'
+				}
 			};
 
 			let channel = client.channels.cache.get('740943163966881803');
@@ -41,7 +41,7 @@ module.exports = {
 			const role = [
 				'740948426774020128',
 				'740948420759650324',
-				'740948429022167040',
+				'740948429022167040'
 			];
 
 			if (reaction.message.partial) await reaction.message.fetch();
@@ -72,5 +72,5 @@ module.exports = {
 				role.forEach((roleId) => member.roles.remove(roleId));
 			}
 		});
-	},
+	}
 };

@@ -5,5 +5,5 @@ function loadConfig() {
 	return Config[node_env];
 }
 module.exports = {
-	Config: loadConfig(),
+	Config: loadConfig()
 };

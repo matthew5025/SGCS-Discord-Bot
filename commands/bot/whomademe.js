@@ -11,7 +11,7 @@ module.exports = class WhoMadeMeCommand extends Command {
 			aliases: ['bot-maker', 'bot-creator'],
 			memberName: 'whomademe',
 			group: 'bot',
-			description: 'Replies with the bot creator\'s name.',
+			description: 'Replies with the bot creator\'s name.'
 		});
 	}
 
@@ -22,8 +22,8 @@ module.exports = class WhoMadeMeCommand extends Command {
 				{
 					method: 'get',
 					headers: {
-						Authorization: 'token ' + githubToken,
-					},
+						Authorization: 'token ' + githubToken
+					}
 				}
 			)
 				.then((res) => res.json())

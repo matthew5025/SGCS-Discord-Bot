@@ -8,7 +8,7 @@ module.exports = class UptimeCommand extends Command {
 			aliases: ['members'],
 			memberName: 'users',
 			group: 'other',
-			description: 'Replies with the amount of users in the server.',
+			description: 'Replies with the amount of users in the server.'
 		});
 	}
 	run(message) {

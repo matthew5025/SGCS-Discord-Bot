@@ -7,15 +7,15 @@ const client = new CommandoClient({
 	commandPrefix: Config.prefix,
 	owner: Config.discord_owner_id,
 	invite: Config.inviteLink,
-	partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
+	partials: ['MESSAGE', 'CHANNEL', 'REACTION']
 });
 
 client.registry
 	.registerDefaultTypes()
 	.registerGroups([
-		['bot', 'Commands related to the bot\'s information'],
+		['bot', "Commands related to the bot's information"],
 		['connect', 'Commands to connect you with others'],
-		['other', 'Other types of commands'],
+		['other', 'Other types of commands']
 	])
 	.registerDefaultGroups()
 	.registerDefaultCommands({ eval: false, prefix: false })
@@ -26,7 +26,7 @@ client.on('ready', () => {
 
 	client.user.setActivity(`${Config.prefix}help`, {
 		type: 'LISTENING',
-		url: 'https://github.com/dallas-ng',
+		url: 'https://github.com/dallas-ng'
 	});
 });
 

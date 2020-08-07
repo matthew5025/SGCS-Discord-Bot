@@ -6,5 +6,5 @@ module.exports = {
 		);
 
 		return message.say(text);
-	},
+	}
 };
