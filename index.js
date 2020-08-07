@@ -1,12 +1,17 @@
 const { CommandoClient } = require('discord.js-commando');
 const path = require('path');
-const { token, prefix, discord_owner_id } = require('./config.json');
-const { Message } = require('discord.js');
+const {
+    token,
+    prefix,
+    discord_owner_id,
+    serverID,
+    inviteLink,
+} = require('./config.json');
 
 const client = new CommandoClient({
     commandPrefix: prefix,
     owner: discord_owner_id,
-    invite: 'https://discord.gg/eXqcbDp',
+    invite: inviteLink,
     partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
 });
 
@@ -29,47 +34,53 @@ client.on('ready', () => {
     });
 });
 
-client.on('ready', () => {
-    const embed = {
-        fields: [
-            {
-                name: '🟣 University',
-                value: '\u200b',
-                inline: true,
-            },
-            {
-                name: '🟠 Polytechnic',
-                value: '\u200b',
-                inline: true,
-            },
-            {
-                name: '🟡 Others',
-                value: '\u200b',
-                inline: true,
-            },
-        ],
-        footer: {
-            text: '❌Clear Roles',
-        },
-    };
+// Load role changer embed if needed
+// client.on('ready', () => {
+//     const embed = {
+//         title: 'Self-assign your role here',
+//         fields: [
+//             {
+//                 name: '🟣 University',
+//                 value: '\u200b',
+//                 inline: true,
+//             },
+//             {
+//                 name: '🟠 Polytechnic',
+//                 value: '\u200b',
+//                 inline: true,
+//             },
+//             {
+//                 name: '🟡 Working',
+//                 value: '\u200b',
+//                 inline: true,
+//             },
+//         ],
+//         footer: {
+//             text: '❌Clear Roles',
+//         },
+//     };
 
-    // channel = client.channels.cache.get('740943163966881803');
-    // channel.send({ embed: embed }).then((message) => {
-    //     message.react('🟣');
-    //     message.react('🟠');
-    //     message.react('🟡');
-    //     message.react('❌');
-    // });
-});
+//     channel = client.channels.cache.get('740943163966881803');
+//     channel.send({ embed: embed }).then((message) => {
+//         message.react('🟣');
+//         message.react('🟠');
+//         message.react('🟡');
+//         message.react('❌');
+//     });
+// });
 
 client.on('messageReactionAdd', async (reaction, user) => {
-    // const emoji = [],
-    //     role = [];
+    const emoji = ['🟣', '🟠', '🟡'];
+    const role = [
+        '740948426774020128',
+        '740948420759650324',
+        '740948429022167040',
+    ];
+
     if (reaction.message.partial) await reaction.message.fetch();
     if (user.bot) return;
 
-    // Now the message has been cached and is fully available:
-    const guild = client.guilds.cache.get('740778577825497098');
+    const guild = client.guilds.cache.get(serverID);
     const member = guild.members.cache.get(user.id);
 
     const userReactions = reaction.message.reactions.cache.filter((reaction) =>
@@ -84,23 +95,15 @@ client.on('messageReactionAdd', async (reaction, user) => {
         console.error(error);
     }
 
-    let role;
-    if (reaction.emoji.name == '🟣') {
-        role = guild.roles.cache.get('740948426774020128');
-        member.roles.add(role);
-    } else if (reaction.emoji.name == '🟠') {
-        role = guild.roles.cache.get('740948420759650324');
-        member.roles.add(role);
-    } else if (reaction.emoji.name == '🟡') {
-        role = guild.roles.cache.get('740948429022167040');
-        member.roles.add(role);
-    } else if (reaction.emoji.name == '❌') {
-        role = guild.roles.cache.get('740948426774020128');
-        member.roles.remove(role);
-        role = guild.roles.cache.get('740948420759650324');
-        member.roles.remove(role);
-        role = guild.roles.cache.get('740948429022167040');
-        member.roles.remove(role);
+    // Valid Reaction
+    if (emoji.includes(reaction.emoji.name)) {
+        member.roles.add(role[emoji.indexOf(reaction.emoji.name)]);
+    }
+
+    // Remove all existing roles
+    if (reaction.emoji.name == '❌') {
+        role.forEach((roleId) => member.roles.remove(roleId));
     }
 });
+
 client.login(token);
