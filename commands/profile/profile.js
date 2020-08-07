@@ -27,8 +27,12 @@ module.exports = class UptimeCommand extends Command {
 
 		Firebase.getConnections(userID).then((doc) => {
 			const profile = user ? user : `<@!${message.author.id}>`;
-			const github = doc ? doc.data.github : 'Not added yet';
-			const linkedin = doc ? doc.data.linkedin : 'Not added yet';
+			const github = doc
+				? 'https://github.com/' + doc.data.github
+				: 'Not added yet';
+			const linkedin = doc
+				? 'https://linkedin.com/ln/' + doc.data.linkedin
+				: 'Not added yet';
 
 			MessageSay(message, this.name, `${profile}'s Connections`);
 			MessageSay(message, this.name, {
@@ -36,11 +40,11 @@ module.exports = class UptimeCommand extends Command {
 					fields: [
 						{
 							name: 'GitHub',
-							value: `https://github.com/${github}`
+							value: `${github}`
 						},
 						{
 							name: 'LinkedIn',
-							value: `https://linkedin.com/ln/${linkedin}`
+							value: `${linkedin}`
 						}
 					]
 				}
