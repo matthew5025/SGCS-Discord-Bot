@@ -1,5 +1,5 @@
 const { Command } = require('discord.js-commando');
-const util = require('../../utils');
+const { MessageSay } = require('../../utils');
 
 module.exports = class UptimeCommand extends Command {
     constructor(client) {
@@ -20,9 +20,9 @@ module.exports = class UptimeCommand extends Command {
         minutes = minutes < 10 ? '0' + minutes : minutes;
         seconds = seconds < 10 ? '0' + seconds : seconds;
 
-        util.LogCommand(message, this.name);
-
-        return message.say(
+        return MessageSay(
+            message,
+            this.name,
             `:chart_with_upwards_trend: I've been running for **${hours}** hours, **${minutes}** minutes and **${seconds}** seconds!`
         );
     }

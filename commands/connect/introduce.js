@@ -1,5 +1,5 @@
 const { Command } = require('discord.js-commando');
-const util = require('../../utils');
+const { MessageSay } = require('../../utils');
 
 module.exports = class UptimeCommand extends Command {
     constructor(client) {
@@ -25,10 +25,9 @@ module.exports = class UptimeCommand extends Command {
 
     run(message) {
         const user = this.getUser(message.author.id);
-
-        util.LogCommand(message, this.name);
-
-        return message.say(
+        MessageSay(
+            message,
+            this.name,
             `${message.author}, you should connect with <@${user.id}>`
         );
     }

@@ -1,5 +1,5 @@
 const { Command } = require('discord.js-commando');
-const util = require('../../utils');
+const { MessageSay } = require('../../utils');
 
 module.exports = class UptimeCommand extends Command {
     constructor(client) {
@@ -16,9 +16,9 @@ module.exports = class UptimeCommand extends Command {
         const amountOfUsers = this.client.users.cache.size - 2;
         const amountOfUsersOnline = this.client.guilds.cache.size;
 
-        util.LogCommand(message, this.name);
-
-        return message.say(
+        return MessageSay(
+            message,
+            this.name,
             `There are currently **${amountOfUsers}** members (**${amountOfUsersOnline}** currently online).`
         );
     }

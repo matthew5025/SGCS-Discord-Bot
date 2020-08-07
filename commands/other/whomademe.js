@@ -2,6 +2,7 @@ const { Command } = require('discord.js-commando');
 const fetch = require('node-fetch');
 const { contributors } = require('../../data.json');
 const { githubToken } = require('../../config.json');
+const { MessageSay } = require('../../utils');
 
 module.exports = class WhoMadeMeCommand extends Command {
     constructor(client) {
@@ -35,14 +36,18 @@ module.exports = class WhoMadeMeCommand extends Command {
                         data.forEach((obj) => collaborators.push(obj.login));
                     }
 
-                    return message.say(
+                    return MessageSay(
+                        message,
+                        this.name,
                         `This bot is made by the following contributors (GitHub Usernames): \n${collaborators
                             .join(', ')
                             .toString()}`
                     );
                 });
         } catch (e) {
-            return message.say(
+            return MessageSay(
+                message,
+                this.name,
                 `This bot is made by the following contributors (GitHub Username): \n${contributors
                     .join(', ')
                     .toString()}`
