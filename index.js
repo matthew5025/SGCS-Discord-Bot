@@ -18,7 +18,11 @@ client.registry
 		['other', 'Other types of commands']
 	])
 	.registerDefaultGroups()
-	.registerDefaultCommands({ eval: false, prefix: false })
+	.registerDefaultCommands({
+		eval: false,
+		prefix: false,
+		unknownCommand: false
+	})
 	.registerCommandsIn(path.join(__dirname, 'commands'));
 
 client.on('ready', () => {
