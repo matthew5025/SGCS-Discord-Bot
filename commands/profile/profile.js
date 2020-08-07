@@ -1,6 +1,7 @@
 const { Command } = require('discord.js-commando');
 const { MessageSay } = require('../../utils/logger');
 const { Firebase } = require('../../db/firebase');
+const { Message } = require('discord.js');
 
 module.exports = class UptimeCommand extends Command {
 	constructor(client) {
@@ -21,6 +22,12 @@ module.exports = class UptimeCommand extends Command {
 	}
 
 	run(message, { user }) {
+		if (user && user.substring(0, 1) !== '<') {
+			MessageSay(message, this.name, 'Please tag a user');
+			return;
+		}
+
+		console.log(user);
 		const userID = user
 			? user.substring(3, user.length - 1)
 			: message.author.id;
