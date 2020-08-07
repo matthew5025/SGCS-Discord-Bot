@@ -9,7 +9,7 @@ module.exports = class UptimeCommand extends Command {
 			name: 'profile',
 			memberName: 'profile',
 			group: 'profile',
-			description: 'View your profile.',
+			description: 'View a profile. ```!profile [user]```',
 			args: [
 				{
 					key: 'user',
