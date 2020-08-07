@@ -13,7 +13,8 @@ const client = new CommandoClient({
 client.registry
 	.registerDefaultTypes()
 	.registerGroups([
-		['bot', "Commands related to the bot's information"],
+		['profile', 'Commands related to your/others profile'],
+		['bot', 'Commands related to the bot\'s information'],
 		['connect', 'Commands to connect you with others'],
 		['other', 'Other types of commands']
 	])

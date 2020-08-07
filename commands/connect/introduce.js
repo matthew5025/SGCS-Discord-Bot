@@ -4,8 +4,8 @@ const { MessageSay } = require('../../utils/logger');
 module.exports = class UptimeCommand extends Command {
 	constructor(client) {
 		super(client, {
-			name: 'connect',
-			memberName: 'connect',
+			name: 'findauser',
+			memberName: 'findauser',
 			group: 'connect',
 			description:
 				'Pings a random person for you to introduce yourself to.'
