@@ -4,6 +4,7 @@ function loadConfig() {
 	let node_env = process.env.NODE_ENV;
 	return Config[node_env];
 }
+
 module.exports = {
 	Config: loadConfig()
 };
