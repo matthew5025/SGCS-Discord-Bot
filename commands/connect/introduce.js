@@ -7,7 +7,8 @@ module.exports = class UptimeCommand extends Command {
             name: 'connect',
             memberName: 'connect',
             group: 'connect',
-            description: 'Connect with a random person.',
+            description:
+                'Pings a random person for you to introduce yourself to.',
         });
     }
 
