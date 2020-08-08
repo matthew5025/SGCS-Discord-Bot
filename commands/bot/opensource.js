@@ -9,14 +9,14 @@ module.exports = class UptimeCommand extends Command {
 			memberName: 'opensource',
 			group: 'bot',
 			description:
-				'More information about this bot\'s license and open source status.'
+				"More information about this bot's license and open source status."
 		});
 	}
 	run(message) {
 		return MessageSay(
 			message,
 			this.name,
-			'This bot is currently under the MIT license. The repository is currently not open-sourced but it will be in the future to allow for everyone to build on top of it.'
+			'The bot is currently under MIT license.\nGitHub Link: https://github.com/Dallas-Ng/SGCS-Discord-Bot'
 		);
 	}
 };

@@ -9,7 +9,7 @@ module.exports = class UptimeCommand extends Command {
 			memberName: 'connect',
 			group: 'profile',
 			description:
-				'Connect your github or linkedin profile. ```!connect [app] [username]```',
+				'Connect your github or linkedin profile. `!connect [app] [username]`',
 			examples: ['connect linkedin', 'connect github'],
 			args: [
 				{
