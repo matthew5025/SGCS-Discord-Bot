@@ -36,7 +36,7 @@ module.exports = class UptimeCommand extends Command {
 				? 'https://github.com/' + doc.data.github
 				: 'Not added yet';
 			const linkedin = doc
-				? 'https://linkedin.com/ln/' + doc.data.linkedin
+				? 'https://linkedin.com/in/' + doc.data.linkedin
 				: 'Not added yet';
 
 			MessageSay(message, this.name, `${profile}'s Connections`);
