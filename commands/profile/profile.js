@@ -8,7 +8,7 @@ module.exports = class UptimeCommand extends Command {
 			name: 'profile',
 			memberName: 'profile',
 			group: 'profile',
-			description: 'View a profile. ```!profile [user]```',
+			description: 'View a profile. `!profile [user]`',
 			args: [
 				{
 					key: 'user',
@@ -26,7 +26,6 @@ module.exports = class UptimeCommand extends Command {
 			return;
 		}
 
-		console.log(user);
 		const userID = user
 			? user.substring(3, user.length - 1)
 			: message.author.id;

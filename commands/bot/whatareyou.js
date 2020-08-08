@@ -5,10 +5,10 @@ module.exports = class UptimeCommand extends Command {
 	constructor(client) {
 		super(client, {
 			name: 'whatareyou',
-			aliases: ['tech'],
+			aliases: ['bottech'],
 			memberName: 'whatareyou',
 			group: 'bot',
-			description: 'Information about this bot\'s technologies.'
+			description: "Information about this bot's technologies."
 		});
 	}
 	run(message) {
