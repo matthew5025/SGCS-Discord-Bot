@@ -1,7 +1,6 @@
 const { Command } = require('discord.js-commando');
 const { MessageSay } = require('../../utils/logger');
 const { Firebase } = require('../../db/firebase');
-const { Message } = require('discord.js');
 
 module.exports = class UptimeCommand extends Command {
 	constructor(client) {
